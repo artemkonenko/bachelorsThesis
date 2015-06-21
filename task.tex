@@ -1,0 +1,36 @@
+\input{SETUP.tex}
+
+\usepackage {amsmath}      % Больше математики
+\usepackage {amssymb}
+\usepackage {textcase}     % Преобразование к верхнему регистру
+\usepackage {indentfirst}  % Красная строка первого абзаца в разделе
+
+\usepackage {fancyvrb}     % Листинги: определяем своё окружение Verb
+\DefineVerbatimEnvironment% с уменьшенным шрифтом
+    {Verb}{Verbatim}
+    {fontsize=\small}
+
+% Вставка рисунков
+\usepackage {graphicx}
+
+% Общее оформление
+\input{core/appearance.tex}
+
+\begin{document}
+
+\pagenumbering{gobble}% Remove page numbers (and reset to 1)
+\clearpage
+\thispagestyle{empty}
+
+\section*{Постановка задачи}
+
+\begin{enumerate}
+  \item Обнаружить узкие места в существующей реализации анализа псевдонимов.
+  \item Модифицировать существующие алгоритмы для ускорения анализа.
+  \item Протестировать работу новой реализации анализа.
+\end{enumerate}
+
+\clearpage
+\pagenumbering{arabic}% Arabic page numbers (and reset to 1)
+
+\end{document}
