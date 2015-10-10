@@ -1,0 +1,153 @@
+\documentclass[twoside,12pt,a4paper]{article}
+
+\usepackage[OT1,T2A]{fontenc}
+\usepackage[cp1251]{inputenc}
+
+\usepackage[russian]{babel}
+\usepackage{epsfig}
+\usepackage{amsmath,amsfonts}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage[mathscr]{eucal}
+\usepackage{tabularx}
+\usepackage{indentfirst}
+
+\pagestyle{myheadings} \tolerance=750
+
+\usepackage{geometry}
+\geometry{left=2.1cm}
+\geometry{right=2.8cm}
+\geometry{top=2.8cm}
+\geometry{bottom=2.8cm}
+
+\begin{document}
+\renewcommand{\refname}{\begin{center}{\normalsize\rm ЛИТЕРАТУРА}\end{center}}
+\large
+
+\begin{center}
+\large{НАЗВАНИЕ СТАТЬИ (БОЛЬШИМИ БУКВАМИ)}
+\end{center}
+
+\markboth{\hfill Фамилии и инициалы авторов
+(например, Иванов О.\,М., Петров С.\,А.)\hfill}
+{\hfill Название доклада (при необходимости сокращенное) --
+для колонтитулов \hfill}
+
+\addcontentsline{toc}{subsection}
+{Фамилии и инициалы авторов. Название доклада (полное) -- для оглавления}
+
+\begin{center}
+\large{\bf Фамилии и инициалы авторов}
+
+\normalsize{\it Организация, город}
+
+\end{center}
+
+{\bf Пример 1 (случай авторов из разных организаций)}
+
+\begin{center}
+\large{\bf Иванов О.\,М.$^{*}$, Петров С.\,А.$^{**}$}
+
+\normalsize{\it $^{*}$ Кубанский госуниверситет, Краснодар} \\
+\normalsize{\it $^{**}$ Южный федеральный университет, Ростов-на-Дону}
+\end{center}
+
+{\bf Конец примера 1}
+
+\vspace{\baselineskip}
+\normalsize
+Реферат на английском языке
+
+\vspace{\baselineskip}
+\large
+
+Общий объем статьи -- не более 15 страниц, включая реферат на английском
+языке, список литературы, рисунки и таблицы. Не допускаются страницы,
+заполненные частично. Последняя страница статьи должна быть заполнена
+более чем на три четверти.
+
+Файлы со статьей и рисунки называются по имени первого автора
+латинскими буквами. Кодировка -- win-1251. Ссылки на литературу
+делаются в квадратных скобках, например, при помощи команды
+\verb|\cite|: \cite{ivanov-bib1}, \cite[гл.\,1]{ivanov-bib2}.
+Все метки, используемые для нумерации уравнений,
+таблиц, рисунков, пунктов в списке литературы,  просьба называть с
+использованием уникального префикса, например, фамилии автора
+латинскими буквами (\verb|ivanow-eq1|).
+
+В качестве тире между словами использовать среднее тире \verb|--| (--),
+в качестве кавычек -- \verb|<<угловые кавычки>>| (<< >>).
+
+Рисунки принимаются в формате eps или jpeg. Надписи на рисунках должны быть
+размером не менее 10--12pt. Используется сквозная нумерация.
+Подрисуночные подписи должны находиться внизу под рисунком по
+центру.
+
+%\begin{figure}[h]%пример использования рисунка
+%  \centering
+%\includegraphics[scale=0.4]{Teach1a.jpg}
+%  \caption{Подпись к рисунку}\label{ivanov-fig1}
+%\end{figure}
+
+Подписи к таблицам располагаются снизу по центру.
+
+Выключные формулы располагаются по центру. Те формулы, на которые
+будут ссылки в тексте, нумеруются с применением среды \verb|equation|.
+Желательно использовать сквозную нумерацию. Например,
+
+\begin{equation}\label{ivanov_eq1}
+E=mc^2.
+\end{equation}
+
+Для указания ссылки на формулу использовать \verb|\eqref|
+или \verb|\ref|, например:
+\verb|\eqref{ivanov_eq1}| или
+\verb|(\ref{ivanov_eq1})|.
+
+{\bf Пример 2 (использование сложных формул)}
+
+Отметим, прежде всего, что смежный класс
+$\{ A_\varepsilon  \}  + \mathfrak{I} _k$
+коммутирует со всеми элементами указанных локализующих классов. Это
+вытекает из соотношения
+$\{ T:\varepsilon  > 0\}  \in \mathfrak{I} _k$ и леммы~3.
+Определим функцию
+$h(\xi )$, $\xi  \in \dot{\mathbb{R}}\setminus\{ 0\}$, формулой
+\begin{displaymath}
+h(\xi )
+=
+\left\{
+\begin{array}{cll}                                    % отцентрировал первый столбец
+\displaystyle    - \frac{2}{\pi }\,\operatorname{si}  % установил режим \displaystyle, добавил малый пробел перед si
+    (\vert\xi\vert) \cdot {\text{sign}}\,\xi ,        % добавил малый пробел после sign
+        &
+        \text{если}
+        &       \xi  \ne \infty ;\\
+        0,
+        &
+        \text{если}
+        &\xi  = \infty .
+\end{array}
+\right.
+\end{displaymath}
+
+{\bf Конец примера 2}
+
+\vspace{\baselineskip}
+
+{\bf Пример 3 (оформление списка литературы)}
+
+\begin{thebibliography}{99}
+\normalsize
+\bibitem{ivanov-bib1}
+{\it Иванов А.\,С.\/} Название статьи // Известия СКНЦ ВШ.
+Естественные науки. 2000. \No~3. С.~184--188.
+\bibitem{ivanov-bib2}
+{\it Сидоров В.\,И.\/} Название книги. М.: Наука, 1979. 320~с.
+\end{thebibliography}
+
+{\bf Конец примера 3}
+
+\end{document}

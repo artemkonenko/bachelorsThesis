@@ -1,0 +1,3 @@
+[submodule "bachelorsThesis"]
+	path = bachelorsThesis
+	url = git@github.com:dummer/bachelorsThesis.git
