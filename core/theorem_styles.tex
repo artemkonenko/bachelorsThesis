@@ -47,3 +47,14 @@
 \newtheorem {myremark} {Замечание} %
 \theoremstyle {nonumberbreak} %
 \newtheorem {myremarks} {Замечания} %
+
+% Плавающие листинги
+\usepackage{float}
+\floatstyle{ruled}
+\floatname{ListingEnv}{Листинг}
+\newfloat{ListingEnv}{htbp}{lol}
+
+% точка после номера листинга
+\makeatletter
+\renewcommand\floatc@ruled[2]{{\@fs@cfont #1.} #2\par}
+\makeatother
