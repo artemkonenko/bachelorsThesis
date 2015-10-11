@@ -20,6 +20,11 @@
 
 \input{core/theorem_styles.tex}
 
+\usepackage{abstract}
+\renewcommand{\abstractname}{abstract}    % clear the title
+\renewcommand{\absnamepos}{empty} % originally center
+%\renewcommand{\abstractname}{\vspace{-\baselineskip}
+
 \usepackage{geometry}
 \geometry{left=2.1cm}
 \geometry{right=2.8cm}
@@ -43,13 +48,18 @@
 \begin{center}
 \large{\bf Коненко А.\,С.}
 
-\normalsize{\it Мехмат ЮФУ, Ростов-на-Дону}
+\normalsize{\it Институт ММиКН ЮФУ, Ростов-на-Дону}
 
 \end{center}
 
 \vspace{\baselineskip}
 \normalsize
+
+\renewcommand{\abstractname}{}    % clear the title
+\renewcommand{\absnamepos}{empty} % originally center
+\begin{onecolabstract}
 Alias analisys is an important part of every modern compiler. In this paper the connection between quality and efficiency of some alias analisys algorithms is discussed. Alias analisys improvements made in OPC project is described.
+\end{onecolabstract}
 
 \vspace{\baselineskip}
 \large
@@ -221,14 +231,14 @@ void f2(int* a, int* X)
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=1\textwidth]{./imgs/konenko_opsDepGraphBad.jpg}
+\includegraphics[width=0.8\textwidth]{./imgs/konenko_opsDepGraphBad.jpg}
 \caption{Граф зависимостей для f1}
 \label{fig:konenko_depgraphBad}
 \end{figure}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=1\textwidth]{./imgs/konenko_opsDepGraphGood.jpg}
+\includegraphics[width=0.78\textwidth]{./imgs/konenko_opsDepGraphGood.jpg}
 \caption{Граф зависимостей для f2}
 \label{fig:konenko_depgraphGood}
 \end{figure}
@@ -284,11 +294,11 @@ void f(int* a, int* b)
 
 Для решения второй проблемы первой идеей было воспользоваться наработками, описанными в работе Лэм и Вилсона~\cite{konenko-WilsonLamSIGPLAN95}, и анализировать контексты, для которых выполняются проверки, чтобы в случае вызова в подобных контекстах выполнять анализ однократно. Но полноценная реализация построения частично трансферных функций имела значительную трудоёмкость, поэтому было принято решение сначала, для проверки гипотезы, реализовать простое кэширование результата для одних и тех же контекстов вызова функции. Этот подход дал неплохие результаты: для тестов небольших размеров время построения результата анализа почти не изменилось, но на достаточно сложных бенчмарках с большим числом вызывающих друг друга функций время построения сократилось вдвое. В таблице~\ref{tabl:konenko_Profiling} колонка с результатами запуска анализа с этой модификацией озаглавлена как \textit{кэширование}.
 
-\large{Заключение}
+\section*{Заключение}
 
-В таблице 1 представлены результаты тестирования скорости построения результата анализа для исходного алгоритма, двух созданных модификаций и их комбинации. Числа в клетках - среднее время в миллисекундах, которое потребовалось на построение результата анализа для соответствующего бенчмарка на 20 запусках. Зеленым в таблице выделены результаты в два и более раз лучше эталона, а красным отмечен серьезный проигрыш производительности.
+В таблице~\ref{tabl:konenko_Profiling} представлены результаты тестирования скорости построения результата анализа для исходного алгоритма, двух созданных модификаций и их комбинации. Числа в клетках - среднее время в миллисекундах, которое потребовалось на построение результата анализа для соответствующего бенчмарка на 20 запусках. Зеленым в таблице выделены результаты в два и более раз лучше эталона, а красным отмечен серьезный проигрыш производительности.
 
-Сборка проекта осуществлялась g++ 4.9.2 на Ubuntu 15.04. Компьютер, на котором осуществлялось тестирование, имеет процессор Intel(R) Core(TM) i7-4700MQ с тактовой частотой 2.4 GHz и автоматическим её увеличением до 3.4 GHz. Нужно отметить, что так как алгоритмы анализа псевдонимов в ОРС работают в одном потоке, частота процессора играет большую роль, чем число ядер.
+ToDo: Дабы закрыть требование к заполненности последней страницы на 2/3 нужно нафигачить еще 4 строки текста о этих результатах.рыба Рыба рыба рыба Рыба рыба рыба Рыба рыба рыба Рыба рыба рыба Рыба рыба рыба Рыба рыба рыба Рыба рыба рыба Рыба рыба рыба Рыба рыба 
 
 \begin{table}[ht]
 \begin{tabular}{l | c | c | c | c }
@@ -308,6 +318,8 @@ quagga      & 23  & \textcolor{green}{6}   & 22                     & 6
 \caption{Результаты тестирования}
 \label{tabl:konenko_Profiling}
 \end{table}
+
+Сборка проекта осуществлялась g++ 4.9.2 на Ubuntu 15.04. Компьютер, на котором осуществлялось тестирование, имеет процессор Intel(R) Core(TM) i7-4700MQ с тактовой частотой 2.4 GHz и автоматическим её увеличением до 3.4 GHz. Нужно отметить, что так как алгоритмы анализа псевдонимов в ОРС работают в одном потоке, частота процессора играет большую роль, чем число ядер.
 
 \begin{thebibliography}{99}
 \normalsize
